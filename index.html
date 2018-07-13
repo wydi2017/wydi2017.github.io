@@ -404,12 +404,16 @@
       
         
           <p>##Hello<br>下面是一首歌：<br>
-        <div id="aplayer-jqQVlCbj" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+			<script>
+				console.error("Error: [hexo-tag-aplayer] Unrecognized tag argument(2): autoplay=false");
+			</script></p>
+
+        <div id="aplayer-hItlXONa" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-jqQVlCbj"),
+            element: document.getElementById("aplayer-hItlXONa"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -423,10 +427,12 @@
           });
           window.aplayers || (window.aplayers = []);
           window.aplayers.push(ap);
-        </script><br>
+        </script>
+
 			<script>
 				console.error("Error: [hexo-tag-aplayer] Unrecognized tag argument(2): https://rememberme.oss-cn-shenzhen.aliyuncs.com/music/%E5%91%A8%E6%9D%B0%E4%BC%A6/Jam%20-%20%E4%B8%83%E6%9C%88%E4%B8%8A.lrc?Expires=1531459587&OSSAccessKeyId=TMP.AQHEJWe7ZbwpGHVDferMuEBC4j7QCuR7GxazDLZaz6X59HpXBRtAFfhS-TUmADAtAhUAyJk85zijh_qfSHetc1h6OlFAYhUCFA1P7jfR28PtzjVakirPhAdKt_6X&Signature=p3QrvJcNrGLt4HU59hyR6NyFrz8%3D");
-			</script><br>下面是测试视频</p>
+			</script>
+<p>下面是测试视频</p>
 <iframe src="//player.bilibili.com/player.html?aid=26443790&cid=45446618&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
           <!--noindex-->
           <div class="post-button text-center">
