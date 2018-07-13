@@ -134,8 +134,6 @@
 
 
 
-<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -403,31 +401,19 @@
 
       
         
-          <p>##Hello<br>下面是一首歌：<br>
+          <p>##Hello<br>下面是一首歌：</p>
+
 			<script>
 				console.error("Error: [hexo-tag-aplayer] Unrecognized tag argument(2): autoplay=false");
-			</script></p>
+			</script>
 
-        <div id="aplayer-PuMeySMd" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-PuMeySMd"),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: "爱在西元前",
-              author: "周杰伦",
-              url: "https://rememberme.oss-cn-shenzhen.aliyuncs.com/music/%E5%91%A8%E6%9D%B0%E4%BC%A6/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E7%88%B1%E5%9C%A8%E8%A5%BF%E5%85%83%E5%89%8D.flac?Expires=1531457773&OSSAccessKeyId=TMP.AQHEJWe7ZbwpGHVDferMuEBC4j7QCuR7GxazDLZaz6X59HpXBRtAFfhS-TUmADAtAhUAyJk85zijh_qfSHetc1h6OlFAYhUCFA1P7jfR28PtzjVakirPhAdKt_6X&Signature=57sPO0o%2FGmWdcW3VihqfAgU4rsU%3D",
-              pic: "https://rememberme.oss-cn-shenzhen.aliyuncs.com/music/%E5%91%A8%E6%9D%B0%E4%BC%A6/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E7%88%B1%E5%9C%A8%E8%A5%BF%E5%85%83%E5%89%8D.lrc?Expires=1531457891&OSSAccessKeyId=TMP.AQHEJWe7ZbwpGHVDferMuEBC4j7QCuR7GxazDLZaz6X59HpXBRtAFfhS-TUmADAtAhUAyJk85zijh_qfSHetc1h6OlFAYhUCFA1P7jfR28PtzjVakirPhAdKt_6X&Signature=PljdpG9aKenJWUkOIqZ8FcgsvuU%3D",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
+			<script>
+				console.error("Error: [hexo-tag-aplayer] Unrecognized tag argument(2): http://rememberme.oss-cn-shenzhen.aliyuncs.com/music/周杰伦/周杰伦 - 爱在西元前.lrc");
+			</script>
+
+			<script>
+				console.error("TypeError: Cannot read property '_id' of undefined");
+			</script>
 
 			<script>
 				console.error("Error: [hexo-tag-aplayer] Unrecognized tag argument(2): https://rememberme.oss-cn-shenzhen.aliyuncs.com/music/%E5%91%A8%E6%9D%B0%E4%BC%A6/Jam%20-%20%E4%B8%83%E6%9C%88%E4%B8%8A.lrc?Expires=1531459587&OSSAccessKeyId=TMP.AQHEJWe7ZbwpGHVDferMuEBC4j7QCuR7GxazDLZaz6X59HpXBRtAFfhS-TUmADAtAhUAyJk85zijh_qfSHetc1h6OlFAYhUCFA1P7jfR28PtzjVakirPhAdKt_6X&Signature=p3QrvJcNrGLt4HU59hyR6NyFrz8%3D");
