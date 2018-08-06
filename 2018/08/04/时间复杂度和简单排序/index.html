@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="漫步云端&#39;blog">
 <meta property="og:description" content="预备知识1、时间复杂度①常数的时间操作：一个操作如果和数据量没有关系，每次都是固定时间操作，叫做常数操作。②时间复杂度常用O（读作big O）来表示。具体来说，在常数操作数量的表达式中，只要高阶项，不要低阶项，也不要高阶项的系数，剩下的部分记为f(N),那么时间复杂度记为O（f(N)）。 例1、时间复杂度的例子对一个长度为N的数组进行排序：算法：依次从0—-N-1个数中选出最小的数，放在数组的0位">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-04T08:11:39.821Z">
+<meta property="og:image" content="https://rememberme.oss-cn-shenzhen.aliyuncs.com/photos/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E6%97%A0%E6%A0%87%E9%A2%98.png">
+<meta property="og:updated_time" content="2018-08-06T05:35:30.633Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="时间复杂度和简单排序">
 <meta name="twitter:description" content="预备知识1、时间复杂度①常数的时间操作：一个操作如果和数据量没有关系，每次都是固定时间操作，叫做常数操作。②时间复杂度常用O（读作big O）来表示。具体来说，在常数操作数量的表达式中，只要高阶项，不要低阶项，也不要高阶项的系数，剩下的部分记为f(N),那么时间复杂度记为O（f(N)）。 例1、时间复杂度的例子对一个长度为N的数组进行排序：算法：依次从0—-N-1个数中选出最小的数，放在数组的0位">
+<meta name="twitter:image" content="https://rememberme.oss-cn-shenzhen.aliyuncs.com/photos/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E6%97%A0%E6%A0%87%E9%A2%98.png">
 
 
 
@@ -409,6 +411,7 @@
 <h3 id="（2）主定理（master-Theorem）"><a href="#（2）主定理（master-Theorem）" class="headerlink" title="（2）主定理（master Theorem）"></a>（2）主定理（master Theorem）</h3><p>设a&gt;=1,b&gt;1为常数，f(n)为函数，T(n)为非负整数，且</p>
 <p>T(n)=aT(n/b)+f(n)</p>
 <p>a是归约后子问题的个数<br>b是子问题的规模<br>f(n)是归约过程及组合子问题解的工作量</p>
+<p><img src="https://rememberme.oss-cn-shenzhen.aliyuncs.com/photos/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/%E6%97%A0%E6%A0%87%E9%A2%98.png" alt="主定理的图片"></p>
 <hr>
 <p>如归并排序：T(n)=2T(n/2)+O(N)<br>带入公式其时间复杂度为O(n*logn)</p>
 <h2 id="4、归并排序"><a href="#4、归并排序" class="headerlink" title="4、归并排序"></a>4、归并排序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package Day01;</span><br><span class="line">/*</span><br><span class="line">归并排序的时间复杂度是O(N*lgN)</span><br><span class="line">T(n)=2T(n/2)+O(N)</span><br><span class="line">* */</span><br><span class="line">public class Day01_mergeSort &#123;</span><br><span class="line">    public static void  mergeSort(int[] arr)&#123;</span><br><span class="line">        if(arr==null||arr.length&lt;2)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        sortProcess(arr,0,arr.length-1);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void sortProcess(int[]arr,int L,int R)&#123;</span><br><span class="line">        if(L==R)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        int mid=(L+R)/2;</span><br><span class="line">        sortProcess(arr,L,mid);//T(2/n)</span><br><span class="line">        sortProcess(arr, mid+1, R);//T(2/n)</span><br><span class="line">        merge(arr,L,mid,R);//O（n）</span><br><span class="line">    &#125;</span><br><span class="line">    public static void merge(int [] arr,int L,int mid,int R)&#123;</span><br><span class="line">        int [] help=new int[R-L+1];</span><br><span class="line">        int p1=L;</span><br><span class="line">        int p2=mid+1;</span><br><span class="line">        int i=0;</span><br><span class="line">        while (p1&lt;=mid &amp;&amp; p2&lt;=R)&#123;</span><br><span class="line">           help[i++]=arr[p1]&lt;arr[p2]?arr[p1++]:arr[p2++];//比较完之后，向右移动一位</span><br><span class="line">        &#125;</span><br><span class="line">        while (p1&lt;=mid)&#123;</span><br><span class="line">            help[i++]=arr[p1++];</span><br><span class="line">        &#125;</span><br><span class="line">        while (p2&lt;=R)&#123;</span><br><span class="line">            help[i++]=arr[p2++];</span><br><span class="line">        &#125;</span><br><span class="line">        for (i=0;i&lt;help.length;i++)&#123;</span><br><span class="line">            arr[L+i]=help[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[]arr=&#123;1,2,1,5,7,0,100,40,20,19,12,10,16&#125;;</span><br><span class="line">     Day01_mergeSort.mergeSort(arr);</span><br><span class="line">     for (int i=0;i&lt;arr.length;i++)&#123;</span><br><span class="line">         System.out.println(arr[i]);</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -530,7 +533,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -541,7 +544,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
